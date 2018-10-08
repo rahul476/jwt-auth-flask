@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from flask import request, jsonify, make_response
 from . import routes
 from models.user import User
-from middlewares.auth import generate_jwt
+from decorators.auth import generate_jwt
 
 @routes.route('/login', methods=['POST', 'GET'])
 @generate_jwt

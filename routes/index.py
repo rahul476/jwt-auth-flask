@@ -1,6 +1,6 @@
 from flask import render_template
 from . import routes
-from middlewares.auth import authorize
+from decorators.auth import authorize
 
 @routes.route('/')
 def index():

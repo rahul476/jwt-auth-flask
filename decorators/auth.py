@@ -12,7 +12,7 @@ JWT_EXP_DELTA_SECONDS = cfg['JWT_EXP_DELTA_SECONDS']
 
 def authorize(func):
     """
-    Middleware
+    Decorator function
     """
     def decorated_function(*args, **kwargs):
         jwt_token = request.cookies.get("jwt_token")
@@ -31,7 +31,7 @@ def authorize(func):
 
 def generate_jwt(func):
     """
-    Middleware
+    Decorator function
     """
     def decorated_function(*args, **kwargs):
         response, pay_load = func(*args, **kwargs)
